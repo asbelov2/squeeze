@@ -1,0 +1,29 @@
+<div class="squeeze">
+    <input type="text" class="form-control" id="targetLink" placeholder="Enter link"
+        name="link" [(ngModel)]="targetLink">
+    <button class="btn btn-primary" (click)="squeeze()">Squeeze</button>
+</div>
+<div class="short-link" *ngIf="!!this.currentLink.short">
+    <div>{{"http://79.143.31.216/s/" + this.currentLink.short}}</div>
+    <div>{{"Number of clicks on link " + this.currentLink.counter}}</div>
+</div>
+<div class="links-table">
+    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Short link</th>
+                <th>Target link</th>
+                <th>Clicks on link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let link of links">
+                <td>{{ link.id }}</td>
+                <td>{{ link.short }}</td>
+                <td>{{ link.target }}</td>
+                <td>{{ link.counter }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,17 @@
+<div class="login-wrap">
+    <div class="login-head">
+        <h1>Login</h1>
+    </div>
+    <form class="login-form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username" name="username" [(ngModel)]="username" required>
+            <small id="usernameHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password" [(ngModel)]="password" required>
+        </div>
+        <button class="btn btn-primary login-form__button" (click)="onSubmit($event)">Login</button>
+    </form>
+</div>
